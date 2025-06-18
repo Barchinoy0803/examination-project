@@ -11,7 +11,7 @@ const MainRouter = () => {
                 path: '/', element: <Home />,
                 children: [
                     {
-                        path: 'create-product', element: <CreateProduct />
+                        path: 'product/:id', element: <CreateProduct />
                     },
                     {
                         path: 'phones', element: <Phone />,

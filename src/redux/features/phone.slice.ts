@@ -1,33 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { Phone } from '../../types'
 
 
 export interface PhoneState {
-    title: string;
-    image: string;
-    description: string;
-    colorId?: string;
-    price: number;
+    phone: Phone
 }
 
 const initialState: PhoneState = {
-    title: "",
-    image: "",
-    description: "",
-    colorId: "",
-    price: 0
+    phone: {
+        title: "",
+        description: "",
+        image: "",
+        price: 0,
+        colorId: ""
+    }
 }
 
 export const PhonesState = createSlice({
     name: 'phones',
     initialState,
     reducers: {
-        setPhone: (state, action: PayloadAction<string>) => {
-            state.title = action.payload
-            state.image = action.payload
-            state.description = action.payload
-            state.colorId = action.payload
-            state.price = Number(action.payload)
+        setPhone: (state, action: PayloadAction<Phone>) => {
+            state.phone = action.payload
         }
     },
 })
