@@ -13,7 +13,7 @@ const Phones = () => {
     deletePhone.mutate(id)
   }
 
-  const handleUpdate = (id: string) => {
+  const handleUpdate = () => {
     navigate("/create-product")
   }
 
@@ -28,7 +28,7 @@ const Phones = () => {
               <div className='flex justify-between items-center'>
                 <span>{phone.price} USD</span>
                 <div className='flex gap-6 text-2xl'>
-                  <RiEditLine onClick={() => handleUpdate(phone.id)} className='text-[#427DC0]'/>
+                  <RiEditLine onClick={() => handleUpdate()} className='text-[#427DC0]'/>
                   <FaTrashAlt onClick={() => handleDelete(phone.id)} className='text-red-500' />
                 </div>
               </div>
